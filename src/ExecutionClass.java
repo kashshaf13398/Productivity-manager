@@ -9,13 +9,24 @@ public class ExecutionClass {
     ArrayList<ConsumableClass> serieslist = new ArrayList<>();
     double totalConsumptionhours=0;
     int totaconsumptiondays=0;
+
     
+
     public static void main(String[] args) {
         ExecutionClass e = new ExecutionClass();
+        e.booklist.add(new Book("book1", 5.4f, "2018-3-6", null, 15,20));
+        e.booklist.add(new Book("book2", 3.5f, "2018-2-6", null, 21,23));
+        e.booklist.add(new Book("book3", 9.8f, "2018-3-6", null, 21,23));
+        e.movielist.add(new Movie("movie1", 4.5f, "2018-11-26", null, 21,26));
+        e.movielist.add(new Movie("movie2", 3.3f, "2018-3-16", null, 21,27));
+        //e.movielist.add(new Movie("movie3", null, null, null, 21,23));
+        e.serieslist.add(new Series("series1", 8f, "2018-6-4", null, 21,7));
+        e.serieslist.add(new Series("series2", 3f, "2018-2-3", null, 21,9));
+        e.serieslist.add(new Series("series3", 7f, "2018-2-21", null, 21,10));
         
-        for (ConsumableClass c :e.booklist){
-            System.out.println(c.getRating());
-        }
+        // for (ConsumableClass c :e.booklist){
+        //     System.out.println(c.getRating());
+        // }
         while(true)
         {
             System.out.println("************************************************");
@@ -29,8 +40,8 @@ public class ExecutionClass {
             
             System.out.println("************************************************");
             System.out.print("Enter Key: ");
-            Scanner input=new Scanner(System.in);
-            int selection = input.nextInt();
+            Scanner scSel=new Scanner(System.in);
+            int selection = scSel.nextInt();
 
             int flag=0;
             switch(selection)
@@ -501,13 +512,13 @@ public class ExecutionClass {
     }
     public void overallInfo(){
         System.out.println("1. total consumption time in hours across all types: "+ (gettotalBooktime()+gettotalMovietime()+gettotalSeriestime()));
-        System.out.println("2 .total consumption time in hours in book: "+gettotalBooktime()+" total consumption time in hours in movie"+gettotalMovietime()+" total consumption time in hours in series: "+gettotalSeriestime());
+        System.out.println("2 .total consumption time in hours in book: "+gettotalBooktime()+" total consumption time in hours in movie: "+gettotalMovietime()+" total consumption time in hours in series: "+gettotalSeriestime());
         System.out.println("3. The total days of consumption across all types :"+(gettotalBookday()+gettotalMovieday()+gettotalseriesday()));
-        System.out.println("4. Individual days of consumption of books "+gettotalBookday() +" Individual days of consumption of movies "+gettotalMovieday()+" Individual days of consumption of series "+gettotalseriesday());
+        System.out.println("4. Individual days of consumption of books: "+gettotalBookday() +" Individual days of consumption of movies: "+gettotalMovieday()+" Individual days of consumption of series: "+gettotalseriesday());
         System.out.println("5. Average rating across all types "+((getAveragerating(booklist)+getAveragerating(movielist)+getAveragerating(serieslist))/3));
-        System.out.println("6. Average rating books "+getAveragerating(booklist)+" Average rating movies"+getAveragerating(movielist)+" Average rating across all types"+getAveragerating(serieslist));
-        System.out.println("7. Total number of consumable across all types"+(consumableCounter(booklist)+consumableCounter(movielist)+consumableCounter(serieslist)));
-        System.out.println("8. Individual number of books"+consumableCounter(booklist)+" Individual number of movies "+ consumableCounter(movielist)+" Individual number of"+consumableCounter(serieslist));
+        System.out.println("6. Average rating books: "+getAveragerating(booklist)+" Average rating movies: "+getAveragerating(movielist)+" Average rating across all types: "+getAveragerating(serieslist));
+        System.out.println("7. Total number of consumable across all types: "+(consumableCounter(booklist)+consumableCounter(movielist)+consumableCounter(serieslist)));
+        System.out.println("8. Individual number of books: "+consumableCounter(booklist)+" Individual number of movies: "+ consumableCounter(movielist)+" Individual number of: "+consumableCounter(serieslist));
 
     }
 
