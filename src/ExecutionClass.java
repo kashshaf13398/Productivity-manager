@@ -13,6 +13,8 @@ public class ExecutionClass {
     
 
     public static void main(String[] args) {
+
+        double thrs=0,tdays=0;
         ExecutionClass e = new ExecutionClass();
         e.booklist.add(new Book("book1", 5.4f, "2018-3-6", null, 15,20));
         e.booklist.add(new Book("book2", 3.5f, "2018-2-6", null, 21,23));
@@ -73,7 +75,7 @@ public class ExecutionClass {
                     break;
                 
                 case 5:
-                    //overallInfo
+                    //overallInfo4
                     e.overallInfo();
                     break;
             }
@@ -81,9 +83,11 @@ public class ExecutionClass {
             if(flag==1)
             {
                 break;
+                
             }
             
             System.out.println("");
+            //scSel.close();
         }
         
         
@@ -198,7 +202,7 @@ public class ExecutionClass {
             System.out.println("1. Edit rating");
             System.out.println("2. ending date");
             System.out.println("3. Add consumption time");
-            System.out.println("4. ending date");
+            System.out.println("4. Add consumption days");
             int k = s.nextInt();
 
             if(k==1){
@@ -247,7 +251,7 @@ public class ExecutionClass {
             System.out.println("1. Edit rating");
             System.out.println("2. ending date");
             System.out.println("3. Add consumption time");
-            System.out.println("4. ending date");
+            System.out.println("4. Add consumption days");
             int k = s.nextInt();
 
             if(k==1){
@@ -295,7 +299,8 @@ public class ExecutionClass {
             System.out.println("1. Edit rating");
             System.out.println("2. ending date");
             System.out.println("3. Add consumption time");
-            System.out.println("4. ending date");
+            System.out.println("4. Add consumption days");
+            
             int k = s.nextInt();
 
             if(k==1){
@@ -465,10 +470,12 @@ public class ExecutionClass {
     }
     public double totalRating(ArrayList<ConsumableClass> ConsumableX){
         double totalRate=0;
+        double j =0;
         for (ConsumableClass i: ConsumableX ){
             totalRate+=i.getRating();
+            j++;
         }
-        return totalRate;
+        return totalRate/j;
 
     }
     public void viewConsumales(){
